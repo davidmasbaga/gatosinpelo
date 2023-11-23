@@ -1,0 +1,38 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { SEO } from "astro-seo";
+const {pageTitle,description, noindex, nofollow, canonical} = Astro.props;
+import CookieConsentModal from '../components/cookies/cookiesConsentModal';
+
+---
+<html lang="es">
+  <head>
+    <SEO
+    noindex={noindex}
+    nofollow={nofollow}
+    canonical={canonical}
+    
+    />
+    <meta charset="utf-8" />
+    <!-- <link rel="canonical" href=`${baseURL}${Astro.url.pathname}` /> -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <CookieConsentModal client:load/>
+    <Header />
+    
+    <slot/> 
+        <Footer />
+    
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
+</html>

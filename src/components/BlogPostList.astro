@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+const pageTitle = "Blog"
+import Card from "./Card.astro";
+import { sortByDate } from "../scripts/sortFunctions";
+
+const sortedPosts= sortByDate(allPosts)
+
+const {title} = Astro.props
+---
+<div class="grid gap-3 lg:grid-cols-2 m-auto w-2/3 my-20">
+
+   
+
+    {sortedPosts.map((post)=>
+    
+        <Card href={`/blog/${post.slug}/`} title={post.data.title} description={post.data.description} category={post.data.category[0]} date={post.data.pubDate} image={post.data.image.url}></Card>
+       
+       
+        )}    
+
+
+</div>

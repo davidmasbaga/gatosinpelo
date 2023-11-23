@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import PageInfoLayout from "../layouts/PageInfoLayout.astro";
+
+export async function getStaticPaths() {
+  const pageEntries = await getCollection('razas');
+  return pageEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<PageInfoLayout frontmatter= {entry.data}>
+<Content/>
+</PageInfoLayout>
