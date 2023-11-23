@@ -4,14 +4,18 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import { SEO } from "astro-seo";
 const {pageTitle,description, noindex, nofollow, canonical} = Astro.props;
-import CookieConsentModal from '../components/cookies/cookiesConsentModal';
+// import CookieConsentModal from '../components/cookies/cookiesConsentModal';
 
+
+//noindex={noindex}
+// nofollow={nofollow}
 ---
 <html lang="es">
   <head>
     <SEO
-    noindex={noindex}
-    nofollow={nofollow}
+   
+    noindex
+    nofollow
     canonical={canonical}
     
     />
@@ -25,7 +29,7 @@ import CookieConsentModal from '../components/cookies/cookiesConsentModal';
     <meta name="description" content={description} />
   </head>
   <body>
-    <CookieConsentModal client:load/>
+    <!-- <CookieConsentModal client:load/> -->
     <Header />
     
     <slot/> 
