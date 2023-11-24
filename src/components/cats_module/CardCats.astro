@@ -1,0 +1,32 @@
+---
+
+const {category,href,title,description, date, image} = Astro.props
+import { Image } from "astro:assets";
+
+
+---
+
+<a href={href} class="group relative block">
+	<div class="relative h-[350px] sm:h-[450px]">
+	  <Image
+		src={image}
+		alt={title}
+		width={200}
+		height={200}
+		class="absolute inset-0 h-full w-full object-cover opacity-100 "
+	  />
+  
+	  
+	</div>
+  
+	<div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+	  <h3 class="text-xl font-medium text-white bg-black px-5 rounded-2xl">{title}</h3>
+  
+	  <p class="mt-1.5 max-w-[40ch] text-xs text-black">
+		{description}
+	  </p>
+  
+	  
+	</div>
+  </a>
+

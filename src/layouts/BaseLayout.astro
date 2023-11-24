@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import { SEO } from "astro-seo";
+import { ViewTransitions } from 'astro:transitions';
 const {pageTitle,description, noindex, nofollow, canonical} = Astro.props;
 // import CookieConsentModal from '../components/cookies/cookiesConsentModal';
 
@@ -27,6 +28,7 @@ const {pageTitle,description, noindex, nofollow, canonical} = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <ViewTransitions/>
   </head>
   <body>
     <!-- <CookieConsentModal client:load/> -->

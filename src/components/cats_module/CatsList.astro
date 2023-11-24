@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("razas");
+
+import CardCats from "./CardCats.astro";
+import { sortByDate } from "../../scripts/sortFunctions";
+
+const sortedPosts= sortByDate(allPosts)
+
+const {title} = Astro.props
+---
+<section class="m-auto w-2/3">
+<h2 class="text-center mb-5">Razas de Gatos sin Pelo</h2>
+<p class="text-center "> ¿Quieres saber por qué hay gatos calvos? ¿Su historia? ¿Cómo identificarlos?. En el apartado «tipos de gatos sin pelo» encontraréis las diferentes razas de gatos sin pelo y sus características principales.
+
+    Si quieres saber qué es un levkoy ucraniano o por qué el Gato egipcio tiene diferentes nombres, nosotros te lo contamos todo. 
+    
+    Estas son todas las razas de los gatos sin pelo..</p>
+</section>    
+<div class="grid gap-3 lg:grid-cols-3 m-auto w-2/3 mt-10 mb-20">
+
+   
+
+    {sortedPosts.map((post)=>
+    
+        <CardCats href={`/${post.slug}/`} title={post.data.title} image={post.data.image.url}></CardCats>
+       
+       
+        )}    
+
+
+</div>

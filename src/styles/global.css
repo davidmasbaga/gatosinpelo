@@ -107,7 +107,8 @@ html {
 
 .page_markdown> p > img {
   border-radius: 15px;
-  margin: 2rem 0rem;/* Ajusta según tus necesidades */
+  margin: 2rem 0rem;
+  align-content: center;
 }
 
 
