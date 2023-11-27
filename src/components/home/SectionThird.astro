@@ -1,0 +1,45 @@
+---
+import gatosinpelo from '../../assets/gatosinpelo.jpg'
+import { Image } from 'astro:assets';
+---
+
+<section class="bg-gray-900">
+  <div
+    class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+  >
+    <div class="font-light text-gray-200 sm:text-lg">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+        El gato sin Pelo como Mascota
+      </h2>
+      <div class="text-base">
+        <p class="mb-4">
+          Estos mininos son muy pacíficos e inteligentes.  Como todos los gatos, son animales curiosos y exploradores, eso sí, no los saques de su espacio.
+
+
+Dada su escasez de pelo, en épocas invernales, no es raro verlos buscando el contacto humano para encontrar un sitio calentito. Son tremendamente afectivos y si le sumas que tienen menos defensa al frío que un animal peludo, pueden llegar a ser muy “cariñosos”
+      </p>
+        </p>
+        <p>
+          En esta web encontraréis información sobre los diferentes tipos de
+          gato sin pelo que hay. Así como los mininos comunes, fácilmente
+          identificables por sus colores y tamaños, los gatos sin pelaje también
+          tienen sus variedades.
+        </p>
+        <p>
+          Son territoriales, sí, pero pueden convivir sin problema con otras mascotas. Estos felinos tienen relación muy buena con los niños, en especial, si crecen a la vez.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-4 mt-8">
+<Image
+src={gatosinpelo}
+alt="Gato Sphynx"
+class='rounded-lg'
+width={600}
+></Image>
+
+
+     
+    </div>
+  </div>
+</section>

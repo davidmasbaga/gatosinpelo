@@ -33,6 +33,6 @@ const { Content,headings } = await entry.render();
       </MarkdownPostLayout>
     </div>
   </div>
-  <RelatedArticles currentSlug={entry.slug} category={entry.data.category}/>
+  <RelatedArticles currentPost={entry} currentSlug={entry.slug} category={entry.data.category}/>
 </BaseLayout>
 
