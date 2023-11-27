@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
+import main_cats from "../../assets/main_cats.png"
 ---
 
-<section class="pt-24">
+<section class="pt-5">
     <div
       class="mx-auto w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 bg-gray-900 mb-20"
     >
@@ -12,9 +13,9 @@ import { Image } from "astro:assets";
         >
           <Image
             alt="Gato sin pelo"
-            src="/images/cats/main_cats.png"
+            src={main_cats}
             class="absolute inset-0 h-full w-full object-cover"
-            width={500}
+            width={900}
             height={500}
           />
         </div>

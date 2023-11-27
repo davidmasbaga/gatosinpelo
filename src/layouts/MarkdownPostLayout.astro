@@ -2,26 +2,23 @@
 const { frontmatter } = Astro.props;
 import { dateFormatter } from "../scripts/formaters";
 import './markdownPostStyles.module.css'
+const Container ='div'
+import { Image } from "astro:assets";
 
 import BaseLayout from "./BaseLayout.astro";
 ---
 
-<BaseLayout pageTitle={frontmatter.title} description={frontmatter.description} isNoFollow={frontmatter.nofollow} isNoIndex={frontmatter.noindex}>
 
-
-
-  <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
-    <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
-        <article class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert dark:text-white">
+   
+     <div class="max-w-full w-full mb-32 mr-36 ">
+        <article class="mx-auto w-full max-w-5xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert dark:text-white ">
             <header class="mb-4 lg:mb-6 not-format">
-               <img src={frontmatter.image.url}>
-                <h1 class="post" class="mb-2 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{frontmatter.title}</h1>
-                <section class="flex content-center items-center gap-10">
+               <Image src={frontmatter.image.url} alt="imagendeblog" width={1024} height={600}/>
+               <section class="flex content-center items-center gap-10">
                   <p class="text-base m-0 text-gray-500 dark:text-gray-400"><time datetime={dateFormatter(frontmatter.pubDate)} title="February 8th, 2022">Feb. 8, 2022</time></p>
                   <div class="flex flex-wrap my-4 gap-2 justify-center">
-                    {frontmatter.category.map((tag) => (
-                      <p class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-sm text-purple-700"><a href={`/tags/${tag}`}>{tag}</a></p>
-                    ))}
+                    <p class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-sm text-purple-700"><a href={`/categories/${frontmatter.category}`}>{frontmatter.category}</a></p>
+                    
                   </div>
                 </section>
                 
@@ -35,74 +32,8 @@ import BaseLayout from "./BaseLayout.astro";
 
 
   </main>
+ </div>
   
-  <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
-    <div class="px-4 mx-auto max-w-screen-xl">
-        <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
-        <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-            <article class="max-w-xs">
-                <a href="#">
-                    <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
-                </a>
-                <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                    <a href="#">Our first office</a>
-                </h2>
-                <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                <a href="#" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                    Read in 2 minutes
-                </a>
-            </article>
-            <article class="max-w-xs">
-                <a href="#">
-                    <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" class="mb-5 rounded-lg" alt="Image 2">
-                </a>
-                <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                    <a href="#">Enterprise design tips</a>
-                </h2>
-                <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                <a href="#" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                    Read in 12 minutes
-                </a>
-            </article>
-            <article class="max-w-xs">
-                <a href="#">
-                    <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                </a>
-                <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                    <a href="#">We partnered with Google</a>
-                </h2>
-                <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                <a href="#" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                    Read in 8 minutes
-                </a>
-            </article>
-            <article class="max-w-xs">
-                <a href="#">
-                    <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png" class="mb-5 rounded-lg" alt="Image 4">
-                </a>
-                <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                    <a href="#">Our first project with React</a>
-                </h2>
-                <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                <a href="#" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                    Read in 4 minutes
-                </a>
-            </article>
-        </div>
-    </div>
-  </aside>
-  
-  
-  
-
-  
-
-
-
-</BaseLayout>
-
-
-
 <style>
     a {
       color: #00539F;
@@ -124,3 +55,57 @@ import BaseLayout from "./BaseLayout.astro";
 
    
   </style>
+
+
+<script>
+	const fnObserver = () => {
+		function handleIntersection(
+			entries: IntersectionObserverEntry[],
+			observer: IntersectionObserver
+		) {
+			entries.forEach((entry) => {
+				const index = document.querySelector(`aside a[href="#${entry.target.id}"]`)
+
+				if (entry.isIntersecting) {
+					index?.classList.remove('bg-slate-200', 'dark:bg-slate-800') // remove bg
+					index?.classList.add(
+						'bg-indigo-600',
+						'dark:bg-indigo-700',
+						'text-white',
+						'font-bold',
+						'transition-colors',
+						'duration-200'
+					)
+				} else {
+					index?.classList.add('bg-slate-200', 'dark:bg-slate-800') // add bg
+					index?.classList.remove(
+						'bg-indigo-600',
+						'dark:bg-indigo-700',
+						'text-white',
+						'font-bold',
+						'transition-colors',
+						'duration-200'
+					)
+				}
+			})
+		}
+
+		const headings = document.querySelectorAll(
+			'div.prose h1, div.prose h2, div.prose h3, div.prose h4, div.prose h5, div.prose h6'
+		)
+
+		const options = {
+			root: null,
+			rootMargin: ' 15% 0px 0% 0px ',
+			threshold: 1
+		}
+
+		const observer = new IntersectionObserver(handleIntersection, options)
+
+		headings.forEach((heading) => {
+			observer.observe(heading)
+		})
+	}
+	fnObserver()
+	document.addEventListener('astro:after-swap', fnObserver)
+</script>

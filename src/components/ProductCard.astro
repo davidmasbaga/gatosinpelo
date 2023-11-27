@@ -1,0 +1,35 @@
+---
+const {category,url,image_url, title} = Astro.props
+const badgeOptions = [
+    { text: '', className: '' },
+    { text: 'Nuevo', className: 'badge badge-secondary' },
+    { text: 'Selección', className: 'badge badge-warning' }
+];
+
+const randomOption = Math.floor(Math.random() * badgeOptions.length);
+const badge = badgeOptions[randomOption];
+---
+
+<div class="card w-96 bg-base-100 shadow-xl ">
+  <div class="badge badge-secondary badge-outline ml-2 mt-2">{category}</div> 
+    <figure '><img class='max-h-80' src={image_url} alt="Shoes" /></figure>
+    <div class="card-body">
+      <section class='flex justify-around gap-2'>
+
+        <div class={`${badge.className}`}>{badge.text}</div>
+       
+
+      </section>
+     
+      <p class="text-m font-semibold text-center items-center pt-2">  {title}      </p>
+        
+    
+      <p></p>
+      <div class="flex items-center card-actions justify-center">
+       
+        <a href={url} class="btn btn-accent"> Encontrar precio Amazon</a>
+       
+      </div>
+    </div>
+  </div>
+  

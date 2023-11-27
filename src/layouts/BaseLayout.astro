@@ -11,7 +11,7 @@ const {pageTitle,description, noindex, nofollow, canonical} = Astro.props;
 //noindex={noindex}
 // nofollow={nofollow}
 ---
-<html lang="es">
+<html lang="es" data-theme="light">
   <head>
     <SEO
    
@@ -33,8 +33,7 @@ const {pageTitle,description, noindex, nofollow, canonical} = Astro.props;
   <body>
     <!-- <CookieConsentModal client:load/> -->
     <Header />
-    
-    <slot/> 
+        <slot/> 
         <Footer />
     
     <script>

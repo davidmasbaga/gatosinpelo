@@ -1,0 +1,34 @@
+---
+import ProductCard from "./ProductCard.astro";
+import products from "../data/socks.json"
+const category = products[0].category
+const socks= products[0].items
+
+---
+
+
+
+<section class="flex gap-2 justify-center flex-wrap m-10 ">
+
+{socks.map((sock)=>(
+
+<ProductCard url={sock.url} image_url={sock.image_url} category={category}  title={sock.product} />
+
+
+
+
+)
+
+
+
+
+
+
+
+)}  
+
+
+
+</section>
+
+

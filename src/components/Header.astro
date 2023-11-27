@@ -1,17 +1,20 @@
 ---
 import Navigation from "./Navigation.astro";
 import { Image } from "astro:assets";
+import logo from "../assets/logo-gato-sin-pelo.png"
 ---
 
 <header >
-  <nav class="flex flex-row justify-around content-center items-center border-gray-200 bg-white fixed z-50 w-full py-5">
-    <a href="/"> <Image
-      src="/images/logo-gato-sin-pelo.png"
-      alt="logo gato sin pelo"
-      width={180}
-      height={200}
-    /> </a>
-    
-    <Navigation />
-  </nav>
+
+
+  <div class="navbar bg-base-100 ">
+    <div class="flex-1 px-10 pt-2">
+      <a href="/">
+      <Image src={logo} alt="logo gato sin pelo" width={150} height={200}>
+      </a>
+    </div>
+    <div class="flex-none z-50 px-10">
+      <Navigation/>
+    </div>
+  </div>
 </header>

@@ -1,10 +1,33 @@
 ---
+import { getCollection } from "astro:content";
+const AllRazas = await getCollection("razas");
+import { sortByDate } from "../scripts/sortFunctions";
+const razas = sortByDate(AllRazas);
 
 ---
 
-<div id="navigation" class=" flex gap-8 text-black ">
-  <a href="/" class="cursor-pointer hover:text-slate-600">Inicio</a>
-  <a href="/about/" class="cursor-pointer hover:text-slate-600">Sobre mi</a>
-  <a href="/category/" class="cursor-pointer hover:text-slate-600">Etiquetas</a>
+<html lang="en">
+<head>
 
-</div>
+
+
+<ul class="menu menu-horizontal ">
+  
+  <li class="">
+    <details>
+      <summary>
+        Razas
+      </summary>
+      <ul class="p-1 bg-base-100">
+      {razas.map ((post)=> (<li><a href={`/${post.slug}`}>{post.data.title}</a> </li>)  
+          
+       )}
+
+        
+        
+      </ul>
+    </details>
+  </li>
+</ul>
+
+
