@@ -36,12 +36,12 @@ html {
 
   h3 {
     margin: 1rem 0;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   h4 {
     margin: 1rem 0;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: bold;
   }
 
@@ -109,6 +109,14 @@ html {
   border-radius: 15px;
   margin: 2rem 0rem;
   align-content: center;
+}
+
+.page_markdown> h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-decoration-color:#46DFCE ;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
 }
 
 
