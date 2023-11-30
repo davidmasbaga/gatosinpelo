@@ -1,21 +1,64 @@
 ---
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
-const {currentSlug, category} = Astro.props
-import { cn } from "../scripts/cn";
 
-const allPosts = await getCollection("posts");
-async function getFilteredPosts() {
-  // Verifica la estructura de sortedPosts
-  const filteredPosts = await allPosts.filter(
-  (post) => post.data.category === category && post.slug !== currentSlug
-  );
-  return filteredPosts;
+
+type PostType = {
+  slug: string; // Asumiendo que cada post tiene un 'slug'
+  commonTagsCount?: number; // Esta propiedad es opcional y la añades tú mismo
+  data: {
+    title: string;
+    pubDate: Date;
+    description: string;
+    image: {
+      url: string;
+      alt: string;
+    };
+    category: string;
+    tags: string[];
+    related?: string[]; // Hacerlo opcional porque es opcional en tu esquema
+  };
+};
+
+// Asegúrate de que relatedPosts sea un arreglo de PostType
+let relatedPosts: PostType[] = [];
+let slugsUsed = new Set([Astro.props.currentPost.slug]); // Registrar el slug del post actual
+
+// Función para contar etiquetas en común
+function countCommonTags(postTags: string[], currentTags: string[]): number {
+  // Asegúrate de que ambos son arreglos
+  if (!Array.isArray(postTags) || !Array.isArray(currentTags)) {
+    return 0;
+  }
+  return postTags.reduce((count, tag) => currentTags.includes(tag) ? count + 1 : count, 0);
 }
 
-const posts = (await getFilteredPosts()).slice(0,4);
+// Obtener todos los posts
+const allPosts = await getCollection("posts");
+const currentPostTags = Astro.props.currentPost.data.tags || [];
 
-console.log(allPosts[3])
+// Lógica para llenar relatedPosts sin duplicados
+for (let minTagsInCommon = 3; minTagsInCommon > 0 && relatedPosts.length < 4; minTagsInCommon--) {
+  // Filtrar posts por cantidad de etiquetas en común y que no estén ya usados
+  const postsWithMinTags = allPosts
+    .filter(post => post.data.tags && post.data.tags.length > 0) // Asegurarse de que el post tiene etiquetas
+    .map(post => ({
+      ...post,
+      commonTagsCount: countCommonTags(post.data.tags, currentPostTags)
+    }))
+    .filter(post => post.commonTagsCount >= minTagsInCommon && !slugsUsed.has(post.slug)) // Excluir posts ya añadidos
+    .sort((a, b) => b.commonTagsCount - a.commonTagsCount);
+
+  // Añadir posts a relatedPosts si aún hay espacio
+  for (const post of postsWithMinTags) {
+    if (relatedPosts.length < 4) {
+      relatedPosts.push(post);
+      slugsUsed.add(post.slug); // Registrar el slug del post añadido
+    }
+  }
+}
+
+
 ---
 
 
@@ -25,12 +68,12 @@ console.log(allPosts[3])
 >
   <div class="px-4 mx-auto max-w-screen-2xl">
     <h2 class="mb-8 text-2xl text-center font-bold text-gray-900 dark:text-white">
-      Related articles
+      Artículos relacionados
     </h2>
     <div class="flex flex-col md:flex-row sm:justify-between gap-8">
       {
-        posts.length > 0 ? (
-          posts.map((post) => {
+        relatedPosts.length > 0 ? (
+          relatedPosts.map((post) => {
             return (
               <div class='flex flex-wrap gap-2'>
                 <div class='min-h-full'>

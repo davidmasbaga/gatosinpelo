@@ -4,7 +4,7 @@ import { dateFormatter } from "../scripts/formaters";
 import './markdownPostStyles.module.css'
 const Container ='div'
 import { Image } from "astro:assets";
-
+const StyledContainer ='div'
 import BaseLayout from "./BaseLayout.astro";
 ---
 
@@ -23,8 +23,9 @@ import BaseLayout from "./BaseLayout.astro";
                 </section>
                 
             </header>
+			<StyledContainer class='page_markdown'>
             <slot/>
-          
+          </StyledContainer>
         </article>
 
 

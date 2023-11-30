@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+const { product, url, image_url, chars=[], width, heigth } = Astro.props;
+const productImg = "https://placehold.co/400x600";
+
+import products from "../data/products.json";
+---
+
+
+
+<a href={url || "#"} target="_blank">
+  <div class="card card-side bg-base-200 shadow-xl p-5 my-10">
+    <div class="flex flex-row justify-around content-between items-stretch">
+      <figure class="pl-10">
+        <Image
+          class="hover:scale-95 ease-in duration-150"
+          src={image_url || productImg}
+          alt="Comida Royal Canin Sphynx"
+          width={width || 200}
+          height={heigth || 400}
+        />
+      </figure>
+      <div class="card-body w-4/5">
+        <div class="badge badge-accent animate-pulse">Artículo destacado</div>
+        <h2 class="text-4xl text-gray-800 font-semibold">
+          {product || "Título del producto"}
+        </h2>
+        <ul class="list-none text-left text-sm mt-2 mb-6 py-2">
+          {Array.isArray(chars) ? chars.map(char => (
+            <li>{char}</li>
+          )) : null}
+        </ul>
+        
+        
+          
+        
+        <div class="card-actions justify-end">
+          <p
+            class="bg-success hover:bg-accent text-white font-bold py-2 px-4 rounded-full text-center"
+          >
+            Comprar Royal Canin Sphynx
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
