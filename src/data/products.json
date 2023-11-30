@@ -41,7 +41,25 @@
     }
 
 ]
-}
+},
+{
+    "category":"food",
+    "items":[
+    
+        {
+            "product":"Royal Canin Sphynx",
+            "url":"https://amzn.to/3R4289o",
+            "image_url":"https://m.media-amazon.com/images/I/71rZWlVMMfL._AC_SL1500_.jpg",
+            "caracteristicas":[
+                "Feline Breed Nutrition es la gama de alimento para gatos más especializada de Royal Canin, especialmente formulada para satisfacer las necesidades de algunas razas de gatos.","País Origen: España","La piel del Sphynx, sin pelo, resulta vulnerable. contiene un complejo sinérgico de nutrientes para ayudar a reforzar la función «barrera» de la piel"
+                
+
+            ]
+    
+        }
+    
+    ]
+    }
 
 ]
 
