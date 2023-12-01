@@ -1,70 +1,67 @@
 [
-{
-"category":"socks",
-"items":[
-
     {
-        "product":"Sphynx Cat Unisex",
-        "url":"https://amzn.to/2y25sNV",
-        "image_url":"https://m.media-amazon.com/images/I/81KOkoLo2-L._AC_SL1500_.jpg"
-
+        "category": "socks",
+        "items": [
+            {
+                "product": "Sphynx Cat Unisex",
+                "url": "https://amzn.to/2y25sNV",
+                "image_url": "https://m.media-amazon.com/images/I/81KOkoLo2-L._AC_SL1500_.jpg"
+            },
+            {
+                "product": "Calcetines Unisex Green Sphynx",
+                "url": "https://amzn.to/2S9IJGH",
+                "image_url": "https://m.media-amazon.com/images/I/71Q0Nn2XwSL._AC_SL1500_.jpg"
+            },
+            {
+                "product": "Medias Sphynx Largas",
+                "url": "https://amzn.to/35aoz4H",
+                "image_url": "https://m.media-amazon.com/images/I/61tvN-KlUXL._AC_SX679_.jpg"
+            },
+            {
+                "product": "Calcetines Sphynx",
+                "url": "https://amzn.to/2KBDGul",
+                "image_url": "https://m.media-amazon.com/images/I/61Y9C7dCDrL._AC_SX679_.jpg"
+            },
+            {
+                "product": "Yuerb Calcetines Altos",
+                "url": "https://amzn.to/3cKTGGm",
+                "image_url": "https://m.media-amazon.com/images/I/61UppOidYPL._AC_SX679_.jpg"
+            },
+            {
+                "product": "Calcetines Unisex Rosas",
+                "url": "https://amzn.to/35aoz4H",
+                "image_url": "https://m.media-amazon.com/images/I/61TmAH0HMgL._AC_SX679_.jpg"
+            }
+        ]
     },
     {
-        "product":"Calcetines Unisex Green Sphynx",
-        "url":"https://amzn.to/2S9IJGH",
-        "image_url":"https://m.media-amazon.com/images/I/71Q0Nn2XwSL._AC_SL1500_.jpg"
-
+        "category": "food",
+        "items": [
+            {
+                "product": "Royal Canin Sphynx",
+                "url": "https://amzn.to/3R4289o",
+                "image_url": "https://m.media-amazon.com/images/I/71rZWlVMMfL._AC_SL1500_.jpg",
+                "caracteristicas": [
+                    "Feline Breed Nutrition es la gama de alimento para gatos más especializada de Royal Canin, especialmente formulada para satisfacer las necesidades de algunas razas de gatos.",
+                    "País Origen: España",
+                    "La piel del Sphynx, sin pelo, resulta vulnerable. contiene un complejo sinérgico de nutrientes para ayudar a reforzar la función «barrera» de la piel"
+                ]
+            }
+        ]
     },
     {
-        "product":"Medias Sphynx Largas",
-        "url":"https://amzn.to/35aoz4H",
-        "image_url":"https://m.media-amazon.com/images/I/61tvN-KlUXL._AC_SX679_.jpg"
-
-    },
-    {
-        "product":"Calcetines Sphynx",
-        "url":"https://amzn.to/2KBDGul",
-        "image_url":"https://m.media-amazon.com/images/I/61Y9C7dCDrL._AC_SX679_.jpg"
-
-    },
-    {
-        "product":"Yuerb Calcetines Altos",
-        "url":"https://amzn.to/3cKTGGm",
-        "image_url":"https://m.media-amazon.com/images/I/61UppOidYPL._AC_SX679_.jpg"
-
-    },
-    {
-        "product":"Calcetines Unisex Rosas",
-        "url":"https://amzn.to/35aoz4H",
-        "image_url":"https://m.media-amazon.com/images/I/61TmAH0HMgL._AC_SX679_.jpg"
-
+        "category": "bath",
+        "items": [
+            {
+                "product": "Kotomoda Champú probiótico",
+                "url": "https://amzn.to/46CPJ23",
+                "image_url": "https://m.media-amazon.com/images/I/618qzVIRcOL._AC_SL1500_.jpg",
+                "caracteristicas": [
+                    "Champú especial para gatos Sphynx 120ml.",
+                    "Elimina sucidedad, limpia el sebo y tiene un resultado positivo en la piel del gato",
+                    "Protege la piel. Aroma neutro y limpio"
+                ]
+            }
+        ]
     }
-
 ]
-},
-{
-    "category":"food",
-    "items":[
-    
-        {
-            "product":"Royal Canin Sphynx",
-            "url":"https://amzn.to/3R4289o",
-            "image_url":"https://m.media-amazon.com/images/I/71rZWlVMMfL._AC_SL1500_.jpg",
-            "caracteristicas":[
-                "Feline Breed Nutrition es la gama de alimento para gatos más especializada de Royal Canin, especialmente formulada para satisfacer las necesidades de algunas razas de gatos.","País Origen: España","La piel del Sphynx, sin pelo, resulta vulnerable. contiene un complejo sinérgico de nutrientes para ayudar a reforzar la función «barrera» de la piel"
-                
-
-            ]
-    
-        }
-    
-    ]
-    }
-
-]
-
-
-
-
-
-

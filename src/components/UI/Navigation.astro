@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 const AllRazas = await getCollection("razas");
-import { sortByDate } from "../scripts/sortFunctions";
+import { sortByDate } from "../../scripts/sortFunctions";
 const razas = sortByDate(AllRazas);
 
 ---

@@ -15,7 +15,7 @@ const {title} = Astro.props
 
     {sortedPosts.map((post)=>
     
-        <Card href={`/blog/${post.slug}/`} title={post.data.title} description={post.data.description} category={post.data.category[0]} date={post.data.pubDate} image={post.data.image.url}></Card>
+        <Card href={`/blog/${post.slug}/`} title={post.data.title} description={post.data.description} category={post.data.category} date={post.data.pubDate} image={post.data.image.url}></Card>
        
        
         )}    

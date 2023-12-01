@@ -1,15 +1,22 @@
 ---
 title: Cuidados Especiales para la Piel del Gato Sphynx
 author: Gato Sin Pelo
-description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
+description: "Descubre cómo cuidar la delicada piel de un gato sin pelo con técnicas efectivas y productos seguros, manteniendo su bienestar y belleza."
 image:
-  url: "/images/posts/royal-canin-sphynx-ok.jpg"
-  alt: "Miniatura de los rayos de Astro."
+  url: "/images/posts/higiene-sphynx.jpg"
+  alt: "sphynx baño"
 pubDate: 2023-11-30
-category: "reseñas"
-tags: [ 'sphynx','curiosidades','reseñas', "alimentación", "salud" ]
+category: "Información Gatuna"
+tags: [ 'sphynx','curiosidades','cuidados', "alimentación", "salud" ]
 related: []
 ---
+
+import BannerSingleProduct from "../../components/BannerSingleProduct.astro";
+import products from "../../data/products.json";
+import productImage from "../../assets/royal_canin_sphynx.jpg"
+import productImageChampu from "../../assets/champu_sphynx.jpg"
+export const productos = products[1].items[0]
+export const champu = products[2].items[0]
 
 # Cuidados Especiales para la Piel del Gato Sphynx
 
@@ -26,7 +33,7 @@ El baño del gato sphynx es una tarea regular e importante para mantener su piel
 ### Productos Específicos
 
 Elegir el producto correcto para el baño es crucial. Los jabones y champús deben ser específicos para gatos sphynx o para piel sensible, y siempre libres de químicos agresivos o fragancias artificiales. Estos productos están diseñados para equilibrar el pH de la piel del gato y evitar la sequedad o irritación.
-
+<BannerSingleProduct url={champu.url} product={champu.product} image_url={productImageChampu} chars={champu.caracteristicas}/>
 ### Manejo de la Grasa Protectora
 
 La piel del gato sphynx produce una grasa protectora que, aunque es natural, puede acumularse y atraer suciedad. Es importante limpiar regularmente con toallitas húmedas especiales para eliminar el exceso de grasa y mantener la piel limpia y saludable entre baños.
@@ -50,7 +57,7 @@ Debido a su metabolismo acelerado, los gatos sphynx requieren una dieta especial
 ### Influencia de la Dieta en la Salud de la Piel
 
 La alimentación del gato sphynx juega un papel crucial en la salud de su piel. Una dieta equilibrada y adecuada no solo afecta su energía y salud general, sino que también es esencial para mantener una piel hidratada y fuerte. Los alimentos ricos en ácidos grasos omega-3 y omega-6 pueden ser particularmente beneficiosos para mantener la elasticidad y salud de la piel.
-
+<BannerSingleProduct url={productos.url} product={productos.product} image_url={productImage} chars={productos.caracteristicas}/>
 ## Cuidados Según el Clima
 
 ### Ajustes en el Hogar
