@@ -1,20 +1,26 @@
 ---
 import { Image } from "astro:assets";
-const { product, url, image_url, chars=[], width, heigth } = Astro.props;
+const {width, heigth, id, image } = Astro.props;
 const productImg = "https://placehold.co/400x600";
 
-import products from "../data/products.json";
+import {findById} from "../scripts/getProductById"
+
+const productData = findById(id)?.items[0]
+
+
+console.log(productData)
+
 ---
 
 
 
-<a href={url || "#"} target="_blank" rel="nofollow">
+<a href={productData?.url || "#"} target="_blank" rel="nofollow">
   <div class="card card-side bg-base-200 shadow-xl p-5 my-10">
     <div class="flex flex-row justify-around content-between items-stretch">
       <figure class="pl-10">
         <Image
           class="hover:scale-95 ease-in duration-150"
-          src={image_url || productImg}
+          src={image || productImg}
           alt="Comida Royal Canin Sphynx"
           width={width || 200}
           height={heigth || 400}
@@ -23,14 +29,14 @@ import products from "../data/products.json";
       <div class="card-body w-4/5">
         <div class="badge badge-accent animate-pulse">Artículo destacado</div>
         <h2 class="text-4xl text-gray-800 font-semibold">
-          {product || "Título del producto"}
+          {productData?.product || "Título del producto"}
         </h2>
         <ul class="list-none text-left text-sm mt-2 mb-6 py-2">
-          {Array.isArray(chars) ? chars.map(char => (
-            <li>{char}</li>
+          {Array.isArray(productData?.caracteristicas) ? productData.caracteristicas.map((caracteristica, index) => (
+            <li id={index}>{caracteristica}</li>
           )) : null}
         </ul>
-        
+
         
           
         

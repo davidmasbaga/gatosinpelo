@@ -1,6 +1,7 @@
 [
     {
         "category": "socks",
+        "id":"1",
         "items": [
             {
                 "product": "Sphynx Cat Unisex",
@@ -36,6 +37,7 @@
     },
     {
         "category": "food",
+        "id":"2",
         "items": [
             {
                 "product": "Royal Canin Sphynx",
@@ -51,6 +53,7 @@
     },
     {
         "category": "bath",
+        "id":"3",
         "items": [
             {
                 "product": "Kotomoda Champú probiótico",
