@@ -6,6 +6,6 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site:'https://unrivaled-peony-43c7ec.netlify.app/',
+  site:'https://gatosinpelo.netlify.app',
   integrations: [react(), tailwind(), mdx()]
 });

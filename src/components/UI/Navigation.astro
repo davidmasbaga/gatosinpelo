@@ -1,33 +1,51 @@
 ---
 import { getCollection } from "astro:content";
 const AllRazas = await getCollection("razas");
+const AllPosts = await getCollection("posts");
+
 import { sortByDate } from "../../scripts/sortFunctions";
+const posts = sortByDate(AllPosts)
 const razas = sortByDate(AllRazas);
 
 ---
 
-<html lang="en">
-<head>
 
 
 
-<ul class="menu menu-horizontal ">
-  
-  <li class="">
-    <details>
-      <summary>
-        Razas
-      </summary>
-      <ul class="p-1 bg-base-100">
-      {razas.map ((post)=> (<li><a href={`/${post.slug}`}>{post.data.title}</a> </li>)  
-          
-       )}
 
-        
-        
-      </ul>
-    </details>
-  </li>
-</ul>
+  <ul class="menu menu-horizontal p-0">
+    <li class="">
+      <details>
+        <summary class="cursor-pointer">
+          Razas
+        </summary>
+        <ul class="p-2 bg-base-100 min-w-max">
+          {razas.map((post) => (
+            <li class="my-2">
+              <a href={`/${post.slug}`} class="text-base hover:text-blue-500">
+                {post.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </li>
+    <li class="">
+      <details>
+        <summary class="cursor-pointer">
+          Artículos
+        </summary>
+        <ul class="p-2 bg-base-100 min-w-max">
+          {posts.map((post) => (
+            <li class="my-2">
+              <a href={`/blog/${post.slug}`} class="text-base hover:text-blue-500">
+                {post.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </li>
+  </ul>
 
 

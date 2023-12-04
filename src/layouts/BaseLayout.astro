@@ -5,18 +5,15 @@ import '../styles/global.css';
 import { SEO } from "astro-seo";
 import { ViewTransitions } from 'astro:transitions';
 const {pageTitle,description, noindex, nofollow, canonical} = Astro.props;
-// import CookieConsentModal from '../components/cookies/cookiesConsentModal';
+import CookieConsentModal from '../components/cookies/cookiesConsentModal';
 
 
-//noindex={noindex}
-// nofollow={nofollow}
 ---
 <html lang="es" data-theme="light">
   <head>
     <SEO
-   
-    noindex
-    nofollow
+    noindex={noindex}
+    nofollow={nofollow}
     canonical={canonical}
     
     />
@@ -31,10 +28,12 @@ const {pageTitle,description, noindex, nofollow, canonical} = Astro.props;
     <ViewTransitions/>
   </head>
   <body>
-    <!-- <CookieConsentModal client:load/> -->
+     
     <Header />
         <slot/> 
+       
         <Footer />
+        <CookieConsentModal client:load/>
     
     <script>
       import "../scripts/menu.js";
