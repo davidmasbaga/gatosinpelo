@@ -1,0 +1,43 @@
+[[redirects]]
+  from = "/los-gatos-sin-pelo-en-el-cine/"
+  to = "/blog/los-gatos-sin-pelo-en-el-cine/"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "/royal-canin-sphynx/"
+  to = "/blog/royal-canin-sphynx/"
+  status = 301
+  force = true
+
+
+[[redirects]]
+  from = "/carritos-de-paseo-para-gatos/"
+  to = "/blog/carritos-de-paseo-para-gatos/"
+  status = 301
+  force = true
+
+
+[[redirects]]
+  from = "/razas-gato-sin-pelo/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mejores-juguetes-para-gatos//"
+  to = "/blog/mejores-juguetes-para-gatos//"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calcetines-de-gatos-sphynx/"
+  to = "/blog/calcetines-de-gatos-sphynx/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/curiosidades-gatos-sin-pelo/"
+  to = "/blog/curiosidades-gatos-sin-pelo/"
+  status = 301
+  force = true
