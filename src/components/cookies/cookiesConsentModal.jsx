@@ -31,7 +31,7 @@ const CookieConsentModal = () => {
   const loadGoogleAnalytics = () => {
     // Carga asincrónica del script de Google Analytics
     const script = document.createElement('script');
-    script.src =  `https://www.googletagmanager.com/gtag/js?id=G-WDGDZ4QZPV`;
+    script.src =  `https://www.googletagmanager.com/gtag/js?id=G-QBGRP5NKYJ`;
     script.async = true;
     document.head.appendChild(script);
 
@@ -41,7 +41,7 @@ const CookieConsentModal = () => {
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-      gtag('config', `G-WDGDZ4QZPV`);
+      gtag('config', `G-QBGRP5NKYJ`);
     }
   };
 
