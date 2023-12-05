@@ -67,9 +67,9 @@ for (let minTagsInCommon = 3; minTagsInCommon > 0 && relatedPosts.length < 4; mi
   class="py-8 lg:py-16 bg-gray-50"
 >
   <div class="px-4 mx-auto max-w-screen-2xl">
-    <h2 class="mb-8 text-2xl text-center font-bold text-gray-900 dark:text-white">
+    <p class="mb-8 text-2xl text-center font-bold text-gray-900 dark:text-white">
       Artículos relacionados
-    </h2>
+    </p>
     <div class="flex flex-col md:flex-row sm:justify-between gap-8">
       {
         relatedPosts.length > 0 ? (
@@ -86,7 +86,7 @@ for (let minTagsInCommon = 3; minTagsInCommon > 0 && relatedPosts.length < 4; mi
                     alt={`img of ${post.data.title}`}
                   />
                 </div>
-                <p class='flex justify-center items-center'>
+                <p class='flex justify-center items-center text-xs'>
                   <a class='font-medium  hover:underline' href={`/blog/${post.slug}`}>
                     {post.data.title}
                   </a>

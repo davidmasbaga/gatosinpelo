@@ -16,23 +16,23 @@ const productData = findById(id)?.items[0]
 
 <a href={productData?.url || "#"} target="_blank" rel="nofollow">
   <div class="card card-side bg-base-200 shadow-xl p-5 my-10">
-    <div class="flex flex-row justify-around content-between items-stretch">
-      <figure class="pl-10">
+    <div class="flex flex-col sm:flex-row justify-around content-between items-center">
+      <figure class="sm:pl-10 mb-4 sm:mb-0">
         <Image
-          class="hover:scale-95 ease-in duration-150"
+          class="hover:scale-95 ease-in duration-150 w-36 sm:w-48 md:w-56"
           src={image || productImg}
           alt="Comida Royal Canin Sphynx"
           width={width || 200}
-          height={heigth || 400}
+          height={heigth || 360}
         />
       </figure>
       <div class="card-body w-4/5">
         <div class="badge badge-accent animate-pulse">Artículo destacado</div>
-        <h2 class="text-4xl text-gray-800 font-semibold">
+        <h2 class="text-lg text-gray-800 font-semibold sm:text-4xl mb-1 sm:mb-4">
           {productData?.product || "Título del producto"}
         </h2>
-        <ul class="list-none text-left text-sm mt-2 mb-6 py-2">
-          {Array.isArray(productData?.caracteristicas) ? productData.caracteristicas.map((caracteristica, index) => (
+        <ul class="list-none text-left text-xs sm:text-sm mt-2 mb-6 py-2">
+          {Array.isArray(productData?.caracteristicas) ? productData?.caracteristicas.map((caracteristica, index) => (
             <li id={index}>{caracteristica}</li>
           )) : null}
         </ul>
@@ -42,7 +42,7 @@ const productData = findById(id)?.items[0]
         
         <div class="card-actions justify-end">
           <p
-            class="bg-success hover:bg-accent text-white font-bold py-2 px-4 rounded-full text-center"
+            class="bg-success hover:bg-accent text-white font-bold py-2 px-4 rounded-full text-center sm:text-base text-sm"
           >
             Comprar al mejor precio
           </p>

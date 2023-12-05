@@ -2,16 +2,16 @@
 const { frontmatter } = Astro.props;
 import { dateFormatter } from "../scripts/formaters";
 import '../styles/markdownPostStyles.module.css'
-const Container ='div'
+
 import { Image } from "astro:assets";
 const StyledContainer ='div'
-import BaseLayout from "./BaseLayout.astro";
+
 ---
 
 
    
-     <div class="max-w-full w-full mb-32 mr-36 ">
-        <article class="mx-auto w-full max-w-5xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert dark:text-white ">
+     <div class="w-full px-4 sm:px-6 lg:px-8 mb-14">
+        <article class="mx-auto max-w-5xl ">
             <header class="mb-4 lg:mb-6 not-format">
                <Image src={frontmatter.image.url} alt="imagendeblog" width={1024} height={600}/>
                <section class="flex content-center items-center gap-10">
