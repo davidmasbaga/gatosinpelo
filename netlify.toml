@@ -11,7 +11,7 @@
   force = true
 
   [[redirects]]
-  from = "/blog/royal-canin-sphynx copy"
+  from = "/blog/royal-canin-sphynx copy/"
   to = "/blog/royal-canin-sphynx/"
   status = 301
   force = true
