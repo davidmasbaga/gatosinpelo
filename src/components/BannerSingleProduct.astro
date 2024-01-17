@@ -1,11 +1,13 @@
 ---
 import { Image } from "astro:assets";
-const {width, heigth, id, image } = Astro.props;
+const {width, heigth, id, image,article } = Astro.props;
 const productImg = "https://placehold.co/400x600";
 
 import {findById} from "../scripts/getProductById"
 
-const productData = findById(id)?.items[0]
+const productData = findById(id)?.items[article]
+
+
 
 
 
@@ -17,10 +19,11 @@ const productData = findById(id)?.items[0]
 <a href={productData?.url || "#"} target="_blank" rel="nofollow">
   <div class="card card-side bg-base-200 shadow-xl p-5 my-10">
     <div class="flex flex-col sm:flex-row justify-around content-between items-center">
-      <figure class="sm:pl-10 mb-4 sm:mb-0">
+      <figure class="sm:pl-10 mb-4 sm:mb-0 w-[24rem]">
+        
         <Image
-          class="hover:scale-95 ease-in duration-150 w-36 sm:w-48 md:w-56"
-          src={image || productImg}
+          class="hover:scale-95 ease-in duration-150 w-40 sm:w-48 md:w-56"
+          src={productData?.image_url || productImg || image }
           alt="Comida Royal Canin Sphynx"
           width={width || 200}
           height={heigth || 360}

@@ -42,7 +42,7 @@
             {
                 "product": "Royal Canin Sphynx",
                 "url": "https://amzn.to/3R4289o",
-                "image_url": "https://m.media-amazon.com/images/I/71rZWlVMMfL._AC_SL1500_.jpg",
+                "image_url": "https://m.media-amazon.com/images/I/71A-6wf2C+L._AC_SL1500_.jpg",
                 "caracteristicas": [
                     "Feline Breed Nutrition es la gama de alimento para gatos más especializada de Royal Canin, especialmente formulada para satisfacer las necesidades de algunas razas de gatos.",
                     "País Origen: España",
@@ -63,6 +63,42 @@
                     "Champú especial para gatos Sphynx 120ml.",
                     "Elimina sucidedad, limpia el sebo y tiene un resultado positivo en la piel del gato",
                     "Protege la piel. Aroma neutro y limpio"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "pushchair",
+        "id":"4",
+        "items": [
+            {
+                "product": "Ibiyaya Combo 5 en 1",
+                "url": "https://amzn.to/3HkFSnt",
+                "image_url": "https://m.media-amazon.com/images/I/51DWoR05LYL._AC_SL1050_.jpg",
+                "caracteristicas": [
+                    "Multifunción 5 en 1",
+                    "Convertible a mochila, portador y carrito",
+                    "Hasta 8kg"
+                ]
+            },
+            {
+                "product": "Pecute Bolso Transportín",
+                "url": "https://amzn.to/48Y6ypG",
+                "image_url": "https://m.media-amazon.com/images/I/91Vb472owML._AC_SL1500_.jpg",
+                "caracteristicas": [
+                    "Portátil y facil pliegue",
+                    "Dimensiones de 44x33x32,5cm",
+                    "Transpirable con malla y buena ventilación"
+                ]
+            },
+            {
+                "product": "PawHut Cochecito Doble",
+                "url": "https://amzn.to/3RY9aND",
+                "image_url": "https://m.media-amazon.com/images/I/71e8IJ8eAHL._AC_SL1500_.jpg",
+                "caracteristicas": [
+                    "Diseño para transportar hasta 2 gatos (o cualquier mascota)",
+                    "Fácil pliegue",
+                    "Medida: 66x50x98 cm"
                 ]
             }
         ]
